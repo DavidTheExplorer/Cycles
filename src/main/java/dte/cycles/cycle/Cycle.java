@@ -9,13 +9,13 @@ import java.util.stream.StreamSupport;
 
 public interface Cycle<E> extends Iterable<E>
 {
-	E getNext(E element);
+	E after(E element);
 
 	Set<E> getElements();
 
 	default Stream<Entry<E, E>> pairStream() 
 	{
-		return StreamSupport.stream(spliterator(), false).map(element -> new SimpleEntry<>(element, getNext(element)));
+		return StreamSupport.stream(spliterator(), false).map(element -> new SimpleEntry<>(element, after(element)));
 	}
 	
 	@Override

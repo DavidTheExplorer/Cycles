@@ -20,7 +20,7 @@ public class CycleFactory
 	 * @see #ordered(E[])
 	 */
 	@SafeVarargs
-	public static <E> Cycle<E> unordered(E... elements)
+	public static <E> Cycle<E> of(E... elements)
 	{
 		return MapCycle.of(new HashMap<>(), elements);
 	}
@@ -31,7 +31,6 @@ public class CycleFactory
 	 * @param <E> The type of the cycle's elements.
 	 * @param elements The elements to add to the cycle; {@code elements[n]} will link to {@code elements[n+1]}.
 	 * @return The created ordered cycle.
-	 * @see #unordered(E[])
 	 */
 	@SafeVarargs
 	public static <E> Cycle<E> ordered(E... elements) 

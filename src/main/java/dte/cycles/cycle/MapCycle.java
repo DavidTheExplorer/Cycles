@@ -26,7 +26,7 @@ public class MapCycle<E> implements Cycle<E>
 	}
 
 	@Override
-	public E getNext(E element)
+	public E after(E element)
 	{
 		return this.links.get(element);
 	}
