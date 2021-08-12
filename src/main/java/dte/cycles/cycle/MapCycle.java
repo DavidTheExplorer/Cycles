@@ -1,5 +1,6 @@
 package dte.cycles.cycle;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -35,6 +36,12 @@ public class MapCycle<E> implements Cycle<E>
 	public Set<E> getElements() 
 	{
 		return new HashSet<>(this.links.keySet());
+	}
+	
+	@Override
+	public Map<E, E> toMap() 
+	{
+		return new HashMap<>(this.links);
 	}
 
 	@Override
