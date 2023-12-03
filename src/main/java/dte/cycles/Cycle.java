@@ -1,4 +1,4 @@
-package dte.cycles.cycle;
+package dte.cycles;
 
 import java.util.Iterator;
 import java.util.Map;

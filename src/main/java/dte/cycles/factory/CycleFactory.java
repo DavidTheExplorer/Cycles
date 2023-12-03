@@ -3,8 +3,8 @@ package dte.cycles.factory;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-import dte.cycles.cycle.Cycle;
-import dte.cycles.cycle.MapCycle;
+import dte.cycles.Cycle;
+import dte.cycles.MapCycle;
 
 public class CycleFactory
 {

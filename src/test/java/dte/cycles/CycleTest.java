@@ -1,4 +1,4 @@
-package dte.cycles.cycle;
+package dte.cycles;
 
 import static org.junit.Assert.assertArrayEquals;
 

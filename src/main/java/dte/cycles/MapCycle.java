@@ -1,4 +1,4 @@
-package dte.cycles.cycle;
+package dte.cycles;
 
 import java.util.HashMap;
 import java.util.HashSet;
