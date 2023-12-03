@@ -10,10 +10,26 @@ import java.util.stream.Collectors;
 
 public interface Cycle<E> extends Iterable<E>
 {
+	/**
+	 * Returns the next element after the provided {@code element}.
+	 * 
+	 * @param element Any element in this cycle.
+	 * @return The next element.
+	 */
 	E after(E element);
 
+	/**
+	 * Returns the distinct elements that compose this cycle.
+	 * 
+	 * @return This cycle's elements.
+	 */
 	Set<E> getElements();
 	
+	/**
+	 * Converts this cycle into a {@code Map} representation - where each entry points to the one afterwards.
+	 * 
+	 * @return This cycle as a {@link java.util.Map Map}.
+	 */
 	default Map<E, E> toMap()
 	{
 		return getElements().stream().collect(Collectors.toMap(Function.identity(), this::after));
@@ -25,8 +41,10 @@ public interface Cycle<E> extends Iterable<E>
 		return getElements().iterator();
 	}
 	
+	
+	
 	/**
-	 * Creates a cycle from the provided {@code elements} that doesn't have a guaranteed iteration order(which is more efficient).
+	 * Creates a cycle from the provided {@code elements} that doesn't have a guaranteed iteration order(more efficient).
 	 * 
 	 * @param <E> The type of the cycle's elements.
 	 * @param elements The elements to add to the cycle; {@code elements[n]} will link to {@code elements[n+1]}.
