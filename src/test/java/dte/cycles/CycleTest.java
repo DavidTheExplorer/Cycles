@@ -1,18 +1,28 @@
 package dte.cycles;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
 public class CycleTest 
 {
 	@Test
-	public void testOrderedCycle() 
+	public void testCyclicBehaviour() 
 	{
-		Cycle<Integer> cycle = Cycle.ordered(1, 2, 3, 4);
+		Cycle<Integer> cycle = Cycle.of(1, 2, 3);
 		
-		Integer[] elements = cycle.getElements().toArray(new Integer[0]);
+		//removing Integer#intValue causes a compilation error
+		assertEquals(2, cycle.after(1).intValue());
+		assertEquals(3, cycle.after(2).intValue());
+		assertEquals(1, cycle.after(3).intValue());
+	}
+	
+	@Test
+	public void testMissingElement() 
+	{
+		Cycle<Integer> cycle = Cycle.of(1, 2, 3);
 		
-		assertArrayEquals(elements, new Integer[] {1, 2, 3, 4});
+		assertThrows(IllegalArgumentException.class, () -> cycle.after(4));
 	}
 }

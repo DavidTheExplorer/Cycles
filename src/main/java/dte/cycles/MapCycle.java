@@ -29,6 +29,9 @@ public class MapCycle<E> implements Cycle<E>
 	@Override
 	public E after(E element)
 	{
+		if(!this.links.containsKey(element))
+			throw new IllegalArgumentException(String.format("Can't get the next element after %s because it's not in the cycle!", element));
+		
 		return this.links.get(element);
 	}
 
