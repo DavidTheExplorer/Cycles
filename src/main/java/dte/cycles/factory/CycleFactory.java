@@ -8,9 +8,6 @@ import dte.cycles.cycle.MapCycle;
 
 public class CycleFactory
 {
-	//Container of static factory methods
-	private CycleFactory(){}
-	
 	/**
 	 * Creates a cycle from the provided {@code elements} that doesn't have a guaranteed iteration order(which is more efficient).
 	 * 
