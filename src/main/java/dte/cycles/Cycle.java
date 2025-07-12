@@ -8,6 +8,11 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * A connected list of objects where the last element is linked to the first - forming an infinite cycle.
+ *
+ * @param <E> The type of this cycle's elements.
+ */
 public interface Cycle<E> extends Iterable<E>
 {
 	/**
@@ -47,7 +52,7 @@ public interface Cycle<E> extends Iterable<E>
 	 * Creates a cycle from the provided {@code elements} that doesn't have a guaranteed iteration order(more efficient).
 	 * 
 	 * @param <E> The type of the cycle's elements.
-	 * @param elements The elements to add to the cycle; {@code elements[n]} will link to {@code elements[n+1]}.
+	 * @param elements The elements to add to the cycle; {@code elements[n]} will be linked to {@code elements[n+1]}.
 	 * @return The created unordered cycle.
 	 * @see #ordered(E[])
 	 */
@@ -61,7 +66,7 @@ public interface Cycle<E> extends Iterable<E>
 	 * Creates a cycle whose iteration order is guaranteed to be the order of the provided {@code elements}.
 	 * 
 	 * @param <E> The type of the cycle's elements.
-	 * @param elements The elements to add to the cycle; {@code elements[n]} will link to {@code elements[n+1]}.
+	 * @param elements The elements to add to the cycle; {@code elements[n]} will be linked to {@code elements[n+1]}.
 	 * @return The created ordered cycle.
 	 */
 	@SafeVarargs
