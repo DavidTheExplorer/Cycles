@@ -30,7 +30,7 @@ public class MapCycle<E> implements Cycle<E>
 	public E after(E element)
 	{
 		if(!this.links.containsKey(element))
-			throw new IllegalArgumentException(String.format("Can't get the next element after %s because it's not in the cycle!", element));
+			throw new IllegalArgumentException("Can't get the next element after %s because it's not in the cycle!".formatted(element));
 		
 		return this.links.get(element);
 	}
