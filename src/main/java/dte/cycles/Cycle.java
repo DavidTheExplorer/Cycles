@@ -52,7 +52,7 @@ public interface Cycle<E> extends Iterable<E>
 	 * @see #ordered(E[])
 	 */
 	@SafeVarargs
-	public static <E> Cycle<E> of(E... elements)
+	static <E> Cycle<E> of(E... elements)
 	{
 		return MapCycle.of(new HashMap<>(), elements);
 	}
@@ -65,7 +65,7 @@ public interface Cycle<E> extends Iterable<E>
 	 * @return The created ordered cycle.
 	 */
 	@SafeVarargs
-	public static <E> Cycle<E> ordered(E... elements) 
+	static <E> Cycle<E> ordered(E... elements)
 	{
 		return MapCycle.of(new LinkedHashMap<>(), elements);
 	}
